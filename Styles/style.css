@@ -1,12 +1,17 @@
 
 @font-face {
   font-family: Neue Haas Medium;
-  src: url(nhaasgrotesktxpro-65md.ttf);
+  src: url(/Fonts/nhaasgrotesktxpro-65md.ttf);
 }
 
 @font-face {
   font-family: Neue Haas Regular;
-  src: url(nhaasgrotesktxpro-55rg.ttf);
+  src: url(/Fonts/nhaasgrotesktxpro-55rg.ttf);
+}
+
+@font-face {
+  font-family: Neue Haas Bold;
+  src: url(/Fonts/nhaasgrotesktxpro-75bd.ttf);
 }
 
 html, body {
@@ -16,7 +21,7 @@ html, body {
 }
 
 body {
-	font-family: Neue Haas Medium;
+	font-family: Neue Haas Medium, sans-serif;
 	font-size: 16px;
 	line-height: 1.15;
 	
@@ -155,19 +160,19 @@ section.info p {
   margin-top: 50px;
   font-size: 14px;
   line-height: 1.5;
-  font-family: Neue Haas Regular;
+  font-family: Neue Haas Regular, sans-serif;
 }
 
 section.info h3 {
   font-size: 14px;
-  font-family: Neue Haas Regular;
+  font-family: Neue Haas Regular, sans-serif;
   text-decoration: underline;
   margin-bottom: 20px;
 }
 
 section.info ul {
   font-size: 14px;
-  font-family: Neue Haas Regular;
+  font-family: Neue Haas Regular, sans-serif;
   line-height: 1.5;
   margin-bottom: 20px;
 }
