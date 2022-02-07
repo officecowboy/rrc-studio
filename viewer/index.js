@@ -1151,29 +1151,11 @@ function loadScene(dirUrl, width, height) {
  * Initializes the application based on the URL parameters.
  */
 function initFromParameters() {
-  const params = new URL(window.location.href).searchParams;
-  const dirUrl = params.get('dir');
-  const size = params.get('s');
-
-  const usageString =
-      'To view a SNeRG scene, specify the following parameters in the URL:\n' +
-      '(Required) The URL to a SNeRG scene directory.\n' +
-      's: (Optional) The dimensions as width,height. E.g. 640,360.\n' +
-      'vfovy:  (Optional) The vertical field of view of the viewer.';
-
-  if (!dirUrl) {
-    error('dir is a required parameter.\n\n' + usageString);
-    return;
-  }
+  const dirUrl ="/Images/png"
 
   let width = 1280;
   let height = 720;
-  if (size) {
-    const match = size.match(/([\d]+),([\d]+)/);
-    width = parseInt(match[1], 10);
-    height = parseInt(match[2], 10);
-  }
-
+  
   gNearPlane = parseFloat(params.get('near') || 0.33);
   const vfovy = parseFloat(params.get('vfovy') || 35);
 
