@@ -1151,13 +1151,13 @@ function loadScene(dirUrl, width, height) {
  * Initializes the application based on the URL parameters.
  */
 function initFromParameters() {
-  const dirUrl ="/Images/png"
+  const dirUrl = "/Images/png"
 
   let width = 1280;
   let height = 720;
   
-  gNearPlane = parseFloat(params.get('near') || 0.33);
-  const vfovy = parseFloat(params.get('vfovy') || 35);
+  gNearPlane = parseFloat(0.33);
+  const vfovy = parseFloat(35);
 
   loadScene(dirUrl, width, height);
 
