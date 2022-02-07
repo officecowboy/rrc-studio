@@ -1153,8 +1153,8 @@ function loadScene(dirUrl, width, height) {
 function initFromParameters() {
   const dirUrl = "/Images/png"
 
-  let width = 1280;
-  let height = 720;
+  let width = 960;
+  let height = 540;
   
   gNearPlane = parseFloat(0.33);
   const vfovy = parseFloat(35);
