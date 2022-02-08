@@ -22,27 +22,57 @@
 					<div>Center</div>
 				</div>
 				<div class="menu">
-					<a href="#infosection"><div id="info">Info</div></a>
+					<a href="#infosection"><div id="info-button">Info</div></a>
 					<a href="https://www.instagram.com/recyclereality/" target="blank"><div id="work">Work</div></a>
 					<a href="https://realityrecycling.center/" target="blank"><div id="archive">Archive</div></a>
 				</div>
 			</header>
-			<img id="cloud" src="/Images/cloud_static.png">
-			<!-- Trigger/Open The Modal -->
-			<button id="myBtn">Open Modal</button>
-			<!-- The Modal -->
-			<div id="myModal" class="modal">
-				<!-- Modal content -->
-				<div class="modal-content">
-					<span class="close">&times;</span>
-					<p>
-						Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Quis varius quam quisque id diam vel quam. Felis eget nunc lobortis mattis aliquam. Quisque egestas diam in arcu cursus. Congue quisque egestas diam in. Iaculis eu non diam phasellus vestibulum. Fermentum iaculis eu non diam. Potenti nullam ac tortor vitae purus. In mollis nunc sed id semper risus in hendrerit gravida.<br><br> Leo in vitae turpis massa. Duis convallis convallis tellus id. Pretium aenean pharetra magna ac placerat vestibulum lectus mauris ultrices. Iaculis urna id volutpat lacus laoreet non. Amet massa vitae tortor condimentum lacinia. Donec massa sapien faucibus et molestie ac feugiat sed lectus. Vulputate mi sit amet mauris commodo. Enim blandit volutpat maecenas volutpat blandit aliquam etiam. A condimentum vitae sapien pellentesque. Pellentesque sit amet porttitor eget dolor morbi non arcu. Nulla aliquet enim tortor.</p>
+			<div id="canvas"></div>
+			<div id=error></div>
+			<div id="viewspacecontainer">
+				<div id=info class=info>
+					Frames per second: <div id="fpsdisplay"></div>
 				</div>
-			</div>	
+				<div id="Loading">
+					<h4>
+					[Loading]
+					<span id="texturergbprogress">RGBA images: 0/?</span>,
+					<span id="texturefeaturesprogress">feature images: 0/?</span>
+					</h4>
+				</div>
+				<button id="myBtn">
+					<svg width="100%" height="100%" viewBox="0 0 800 800" version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" xml:space="preserve" style="fill-rule:evenodd;clip-rule:evenodd;stroke-linejoin:round;stroke-miterlimit:1.41421;">
+						<g transform="matrix(1.74664,0,0,1.74642,-252.1,-60.7251)">
+							<g id="Ebene1">
+								<g>
+									<g transform="matrix(3.48575,0,0,3.48575,-650.368,-420.328)">
+										<circle cx="293.685" cy="196.267" r="65.165" style="fill:rgb(185,185,185);"/>
+									</g>
+									<g transform="matrix(3.08698,0,0,3.08698,-779.162,-550.57)">
+										<path d="M383.686,244.808L383.686,311.2L393.411,311.2L393.411,318.84L354.496,318.84L354.496,311.2L363.406,311.2L363.406,255.222L354.496,251.655L354.496,244.808L383.686,244.808Z" style="fill:white;"/>
+									</g>
+									<g transform="matrix(3.22886,0,0,3.22886,-797.323,-547.116)">
+										<circle cx="362.95" cy="211.755" r="11.84" style="fill:white;"/>
+									</g>
+								</g>
+							</g>
+						</g>
+					</svg>					
+				</button>
+				<div id="myModal" class="modal">
+					<div class="modal-content">
+						<span class="close">&times;</span>
+						<p>
+							Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Quis varius quam quisque id diam vel quam. Felis eget nunc lobortis mattis aliquam. Quisque egestas diam in arcu cursus. Congue quisque egestas diam in. Iaculis eu non diam phasellus vestibulum. Fermentum iaculis eu non diam. Potenti nullam ac tortor vitae purus. In mollis nunc sed id semper risus in hendrerit gravida.<br><br> Leo in vitae turpis massa. Duis convallis convallis tellus id. Pretium aenean pharetra magna ac placerat vestibulum lectus mauris ultrices. Iaculis urna id volutpat lacus laoreet non. Amet massa vitae tortor condimentum lacinia. Donec massa sapien faucibus et molestie ac feugiat sed lectus. Vulputate mi sit amet mauris commodo. Enim blandit volutpat maecenas volutpat blandit aliquam etiam. A condimentum vitae sapien pellentesque. Pellentesque sit amet porttitor eget dolor morbi non arcu. Nulla aliquet enim tortor.</p>
+					</div>
+				</div>	
+				<div class=viewspace id="viewspace">
+				</div>
+			</div>
 		</div>
 	</section>
 		
-	<section class="info" id="infosection">
+	<section class="infosection" id="infosection">
 		<div class="content-info">
 			<div class="left-info">
 				<h2>The Reality Recycling Center (RRC) creates mixed reality experiences, tools, and souvenirs that spark new connections across media and technology of the past, present, and future.</h2>
@@ -114,9 +144,12 @@
 		</div>
 	</section>
 		
-	<script src="script.js"></script>
 	<script src="/Scripts/modal.js"></script>
-		  
+	<script src="https://unpkg.com/three@0.113.1/build/three.js"></script>
+	<script src="https://unpkg.com/three@0.113.1/examples/js/controls/OrbitControls.js"></script>
+	<script src="https://unpkg.com/png-js@1.0.0/zlib.js"></script>
+	<script src="https://unpkg.com/png-js@1.0.0/png.js"></script>
+	<script src="/Scripts/index.js"></script>	  
 	</body>
 
 </html>
