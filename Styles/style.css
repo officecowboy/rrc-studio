@@ -44,10 +44,6 @@ section {
   margin: 0 auto;
 }
 
-section.about {
-  height: 100vh;
-}
-
 section.about h1 {
   font-size: 2.5vmax;
   line-height: 1.15;
@@ -120,7 +116,7 @@ header {
 /* The Modal (background) */
 .modal {
   display: none; /* Hidden by default */
-  position: fixed; /* Stay in place */
+  position: absolute; /* Stay in place */
   z-index: 1; /* Sit on top */
   left: 0;
   top: 0;
@@ -135,7 +131,7 @@ header {
   background-color: #dfdfdf;
   border: 2px solid #000000;
   padding: 20px;
-  width: 50%; /* Could be more or less, depending on screen size */
+  width: 70%; /* Could be more or less, depending on screen size */
   position: absolute;
   top: 50%;
   left: 50%;
@@ -205,13 +201,11 @@ section.about svg {
 }
 
 #viewspacecontainer {
-  position: absolute;
-  top: 50%;
-  left: 50%;
-  transform: translate(-50%, -50%);
+  position: relative;
   text-align: left;
   display: none;
   margin: 0 auto;
+  margin-bottom: 20px;
 }
 
 /* The main SNeRG view */
@@ -222,7 +216,6 @@ section.about svg {
   width: 960px;
   height: 720px;
   transform-origin: top left;
-  background: #fff;
 }
 
 
@@ -236,7 +229,7 @@ section.infosection {
 }
 
 .content-info {
-  max-width: 1024px;
+  max-width: 960px;
   max-height: 946px;
   margin: 0 auto;
   position: relative;
@@ -244,7 +237,7 @@ section.infosection {
 }
 
 .left-info {
-  width: 50%;
+  width: 80%;
   float: left;
   padding-right: 20px;
 }

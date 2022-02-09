@@ -1154,7 +1154,7 @@ function initFromParameters() {
   const dirUrl = "/Images/png"
 
   let width = 960;
-  let height = 540;
+  let height = 500;
   
   gNearPlane = parseFloat(0.33);
   const vfovy = parseFloat(35);
