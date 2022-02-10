@@ -13,7 +13,7 @@
 // limitations under the License.
 
 // Sam Edit
-let isRendering = true;
+let isRendering = false;
 let animationFrame = null;
 
 /**
