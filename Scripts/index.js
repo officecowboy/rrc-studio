@@ -13,8 +13,9 @@
 // limitations under the License.
 
 // Sam Edit
-let isRendering = false;
+let isRendering = true;
 let animationFrame = null;
+let firstFrame = true;
 
 /**
  * The a global dictionary containing scene parameters.
@@ -787,6 +788,8 @@ function addHandlers() {
       e.preventDefault();
     }
   });
+  view.addEventListener('mouseover', startRender);
+  view.addEventListener('mouseout', stopRender);
 }
 
 /**
@@ -1386,7 +1389,8 @@ function render(t) {
   gRenderer.render(gRayMarchScene, gBlitCamera);
 
   updateFPSCounter();
-  if (isRendering) {
+  if (firstFrame || isRendering) {
+    firstFrame = false;
     animationFrame = requestAnimationFrame(render);
   } else if (animationFrame != null)
   {
@@ -1396,6 +1400,13 @@ function render(t) {
   
 }
 
+function startRender() {
+  isRendering = true;
+}
+
+function stopRender() {
+  isRendering = false;
+}
 /**
  * Starts the volumetric object viewer application.
  */
