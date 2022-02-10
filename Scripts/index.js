@@ -12,6 +12,10 @@
 // See the License for the specific language governing permissions and
 // limitations under the License.
 
+// Sam Edit
+let isRendering = true;
+let animationFrame = null;
+
 /**
  * The a global dictionary containing scene parameters.
  * @type {?Object}
@@ -1050,7 +1054,7 @@ function loadScene(dirUrl, width, height) {
     let atlasIndexImage = values[1];
 
     // Start rendering ASAP, forcing THREE.js to upload the textures.
-    requestAnimationFrame(render);
+    animationFrame = requestAnimationFrame(render);
 
     gSceneParams = parsed;
     gSceneParams['dirUrl'] = dirUrl;
@@ -1382,7 +1386,14 @@ function render(t) {
   gRenderer.render(gRayMarchScene, gBlitCamera);
 
   updateFPSCounter();
-  requestAnimationFrame(render);
+  if (isRendering) {
+    animationFrame = requestAnimationFrame(render);
+  } else if (animationFrame != null)
+  {
+    cancelAnimationFrame(animationFrame);
+    animationFrame = null;
+  }
+  
 }
 
 /**
