@@ -1402,6 +1402,7 @@ function render(t) {
 
 function startRender() {
   isRendering = true;
+  animationFrame = requestAnimationFrame(render);
 }
 
 function stopRender() {
