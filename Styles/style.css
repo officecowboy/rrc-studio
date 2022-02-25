@@ -34,7 +34,7 @@ section {
 }
 
 section.about {
-  background-image: url(/Images/cloud-background-texture-small.jpg);
+  background-image: url("/Images/cloud-background-texture-gradient.jpg");
   background-repeat: no-repeat;
   background-size: cover;
   display: flex;
