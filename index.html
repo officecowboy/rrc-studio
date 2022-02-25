@@ -1,185 +1,183 @@
 <!doctype html>
 <html>
-	<head>
-		<meta charset="utf-8">
-		<meta name="generator" content="SuperHi">
-		<meta http-equiv="X-UA-Compatible" content="IE=edge">
-		<meta name="viewport" content="width=device-width, initial-scale=1">
-		<title>Reality Recycling Center</title>
-		<link rel="icon" type="image/x-icon" href="/images/cloud.ico">
-		<link rel="stylesheet" href="/Styles/_base.css">
-		<link rel="stylesheet" href="/Styles/style.css">
-	</head>
 
-	<body>
+<head>
+  <meta charset="utf-8">
+  <meta name="generator" content="SuperHi">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Reality Recycling Center</title>
+  <link rel="icon" type="image/x-icon" href="/images/cloud.ico">
+  <link rel="stylesheet" href="/Styles/_base.css">
+  <link rel="stylesheet" href="/Styles/style.css">
+</head>
 
-	<section class="about" id="about">
-		<div class="content">
-			<header>
-				<img src="/Images/rrc_solo_logo.png" class="spin">
-				<div class="logo">
-					<div>Reality</div>
-					<div>Recycling</div>
-					<div>Center</div>
-				</div>
-				<div class="menu">
-					<a href="#infosection"><div id="info-button">Info</div></a>
-					<a href="https://www.instagram.com/recyclereality/" target="blank"><div id="work">Work</div></a>
-					<a href="https://realityrecycling.center/" target="blank"><div id="archive">Archive</div></a>
-				</div>
-			</header>
-			<div id="canvas"></div>
-			<div id=error></div>
-			<div id="viewspacecontainer">
-				<div id=info class=info>
-					Frames per second: <div id="fpsdisplay"></div>
-				</div>
-				<div id="Loading">
-					<h4>
-					[Loading]
-					<span id="texturergbprogress">RGBA images: 0/?</span>,
-					<span id="texturefeaturesprogress">feature images: 0/?</span>
-					</h4>
-				</div>
-				<button id="myBtn">
-					<svg width="100%" height="100%" viewBox="0 0 800 800" version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" xml:space="preserve" style="fill-rule:evenodd;clip-rule:evenodd;stroke-linejoin:round;stroke-miterlimit:1.41421;">
-						<g transform="matrix(1.74664,0,0,1.74642,-252.1,-60.7251)">
-							<g id="Ebene1">
-								<g>
-									<g transform="matrix(3.48575,0,0,3.48575,-650.368,-420.328)">
-										<circle cx="293.685" cy="196.267" r="65.165" style="fill:rgb(185,185,185);"/>
-									</g>
-									<g transform="matrix(3.08698,0,0,3.08698,-779.162,-550.57)">
-										<path d="M383.686,244.808L383.686,311.2L393.411,311.2L393.411,318.84L354.496,318.84L354.496,311.2L363.406,311.2L363.406,255.222L354.496,251.655L354.496,244.808L383.686,244.808Z" style="fill:white;"/>
-									</g>
-									<g transform="matrix(3.22886,0,0,3.22886,-797.323,-547.116)">
-										<circle cx="362.95" cy="211.755" r="11.84" style="fill:white;"/>
-									</g>
-								</g>
-							</g>
-						</g>
-					</svg>					
-				</button>
-				<div id="myModal" class="modal">
-					<div class="modal-content">
-						<span class="close">&times;</span>
-						<p>
-							<i>When is a cloud no longer a cloud?</i>
-							<br>
-							<br> 
-							Clouds are nature’s counter example to the fractal. It’s not turtles all the way down - 
-							it’s a lion’s mouth with pirate ships for teeth and dragons for a mane. Divide it as many times as you’d like, 
-							and you’ll be left with water. Wrap your hands around one and see what you’re left with.
-							<br>
-							<br>
-							<i>How do you find the edges of something in constant motion?</i>
-							<br>
-							<br>
-							The representational forms underpinning our mediated lives exist in a state of constant flux, 
-							even when we can’t see it. The model loading behind this text could have started its life in any number 
-							of forms - STL, OBJ, PLY. What it is now is something different entirely. Like a cloud formed of millions of 
-							droplets, the very concept of the model has been distributed across the neurons of a Neural Radiance Field 
-							(NeRF) and precomputed into a representational form capable of synthesizing novel views in real time, 
-							called a Sparse Neural Radiance Grid (SNeRG). But then again, it’s just another cloud.
-							<br>
-							<br>
-							<i>When is what you see what you get?</i>
-							<br>
-							<br>
-							<br>
-							Click + Drag to Move
-							<br>
-							Scroll to Zoom
-						</p>
-						<p>
-							Please refer to the <a href=https://arxiv.org/abs/2103.14645>original paper</a> to learn more about SNeRG.
-						</p>
-					</div>
-				</div>	
-				<div class=viewspace id="viewspace">
-				</div>
-			</div>
-		</div>
-	</section>
-		
-	<section class="infosection" id="infosection">
-		<div class="content-info">
-			<div class="left-info">
-				<h2>The Reality Recycling Center (RRC) creates mixed reality experiences, tools, and souvenirs that spark new connections across media and technology of the past, present, and future.</h2>
-				<p>Beginning as a series of independent experiments, RRC has evolved into a multi-disciplinary creative studio with clients and collaborators in art, music, and technology. 
-					<br><br>
-					Our team is currently pursuing graduate study in lighting design at Parsons School of Design and artificial intelligence at Stanford University. We bring a combined background and interest in computer science, audio/video production, and media studies to our work at RRC.</p>
-				<footer>
-					<img src="Images/RRClogo_7.12.21_small.png">
-					<ul>
-						<li>REALITY RECYCLING CENTER, LLC</li>
-						<li>347-956-8885</li>
-						<li><a href="mailto:hello@realityrecycling.center">hello@realityrecycling.center</a></li>
-						<li><a href="https://www.instagram.com/recyclereality/" target="blank">Instagram</a> / <a href="https://twitter.com/recyclereality" target="blank">Twitter</a> / <a href="https://www.linkedin.com/company/reality-recycling-center" target="blank">LinkedIn</a></li>
-					</ul>
-				</footer>
-			</div>
-			<div class="right-info">
-				<h3>Services</h3>
-				<ul>
-					<li>3D/AR/VR Design</li>
-					<li>Web Design & Development</li>
-					<li>AI & Machine Learning</li>
-					<li>Minigame Development</li>
-					<li>Art Direction</li>
-					<li>Sound Design</li>
-					<li>Video Installation</li>
-					<li>Analog VFX & Processing</li>
-					<li>Stage Design</li>
-					<li>Mechatronics</li>
-				</ul>
-				<h3>Clients</h3>
-				<ul>
-					<li>Loewe</li>
-					<li>On Running</li>
-					<li>Amazon Music</li>
-					<li>Sylvan Esso</li>
-					<li>Hippo Campus</li>
-					<li>Raffaella</li>
-					<li>Baby Boys</li>
-					<li>Whistler Allen</li>
-					<li>Wye Oak</li>
-				</ul>
-				<h3>Past Clients + Employers</h3>
-				<ul>
-					<li>Red Bull Music</li>
-					<li>Rolling Stone</li>
-					<li>Sonos</li>
-					<li>RocNation</li>
-					<li>Budweiser</li>
-					<li>Universal Music Group</li>
-					<li>Gunpowder & Sky</li>
-				</ul>
-				<h3>Current Team</h3>
-				<ul>
-					<li>Nicholas Byrne</li>
-					<li>Sam Lowe</li>
-					<li>Scott Diekema</li>
-				</ul>
-				<h3>Past + Present Collaborators</h3>
-				<ul>
-					<li>Clare MacDonald</li>
-					<li>Vijay Rajkumar</li>
-					<li>Elinor Walker</li>
-					<li>Nayoun Ryu</li>
-					<li>Florencia</li>
-					<li>Julietta</li>
-				</ul>
-			</div>
-		</div>
-	</section>
-		
-	<script src="/Scripts/modal.js"></script>
-	<script src="https://unpkg.com/three@0.113.1/build/three.js"></script>
-	<script src="https://unpkg.com/three@0.113.1/examples/js/controls/OrbitControls.js"></script>
-	<script src="https://unpkg.com/png-js@1.0.0/zlib.js"></script>
-	<script src="https://unpkg.com/png-js@1.0.0/png.js"></script>
-	<script src="/Scripts/index.js"></script>	  
-	</body>
+<body>
+
+  <section class="about" id="about">
+
+    <header class="logo">
+      <img src="/Images/rrc_solo_logo.png" class="spin">
+      <div class="logo-text">
+        <div>Reality</div>
+        <div>Recycling</div>
+        <div>Center</div>
+      </div>
+    </header>
+
+    <div class="cloud">
+      <div id="canvas"></div>
+      <div id=error></div>
+      <div id="viewspacecontainer">
+        <div id=info class=info>
+          Frames per second: <div id="fpsdisplay"></div>
+        </div>
+        <div id="Loading">
+          <h4>
+            [Loading]
+            <span id="texturergbprogress">RGBA images: 0/?</span>,
+            <span id="texturefeaturesprogress">feature images: 0/?</span>
+          </h4>
+        </div>
+        <button id="myBtn">
+          <svg width="100%" height="100%" viewBox="0 0 800 800" version="1.1" xmlns="http://www.w3.org/2000/svg"
+            xmlns:xlink="http://www.w3.org/1999/xlink" xml:space="preserve"
+            style="fill-rule:evenodd;clip-rule:evenodd;stroke-linejoin:round;stroke-miterlimit:1.41421;">
+            <g transform="matrix(1.74664,0,0,1.74642,-252.1,-60.7251)">
+              <g id="Ebene1">
+                <g>
+                  <g transform="matrix(3.48575,0,0,3.48575,-650.368,-420.328)">
+                    <circle cx="293.685" cy="196.267" r="65.165" style="fill:rgb(185,185,185);" />
+                  </g>
+                  <g transform="matrix(3.08698,0,0,3.08698,-779.162,-550.57)">
+                    <path
+                      d="M383.686,244.808L383.686,311.2L393.411,311.2L393.411,318.84L354.496,318.84L354.496,311.2L363.406,311.2L363.406,255.222L354.496,251.655L354.496,244.808L383.686,244.808Z"
+                      style="fill:white;" />
+                  </g>
+                  <g transform="matrix(3.22886,0,0,3.22886,-797.323,-547.116)">
+                    <circle cx="362.95" cy="211.755" r="11.84" style="fill:white;" />
+                  </g>
+                </g>
+              </g>
+            </g>
+          </svg>
+        </button>
+        <div id="myModal" class="modal">
+          <div class="modal-content">
+            <span class="close">&times;</span>
+            <p>
+              Bio goes here.
+            </p>
+            <br>
+            <p>
+              Please refer to the <a href=https://arxiv.org/abs/2103.14645>original paper</a> to learn more about SNeRG.
+            </p>
+          </div>
+        </div>
+        <div class=viewspace id="viewspace"></div>
+      </div>
+    </div>
+
+    <div class="menu">
+      <a href="#infosection">
+        <div>Info</div>
+      </a>
+      <a href="https://www.instagram.com/recyclereality/" target="blank">
+        <div>Work</div>
+      </a>
+      <a href="https://realityrecycling.center/" target="blank">
+        <div>Archive</div>
+      </a>
+    </div>
+
+
+  </section>
+
+  <section class="infosection" id="infosection">
+    <div class="content-info">
+      <div class="left-info">
+        <h2>The Reality Recycling Center (RRC) creates mixed reality experiences, tools, and souvenirs that spark new
+          connections across media and technology of the past, present, and future.</h2>
+        <p>Beginning as a series of independent experiments, RRC has evolved into a multi-disciplinary creative studio
+          with clients and collaborators in art, music, and technology.
+          <br><br>
+          Our team is currently pursuing graduate study in lighting design at Parsons School of Design and artificial
+          intelligence at Stanford University. We bring a combined background and interest in computer science,
+          audio/video production, and media studies to our work at RRC.
+        </p>
+        <footer>
+          <img src="Images/RRClogo_7.12.21_small.png">
+          <ul>
+            <li>REALITY RECYCLING CENTER, LLC</li>
+            <li>347-956-8885</li>
+            <li><a href="mailto:hello@realityrecycling.center">hello@realityrecycling.center</a></li>
+            <li><a href="https://www.instagram.com/recyclereality/" target="blank">Instagram</a> / <a
+                href="https://twitter.com/recyclereality" target="blank">Twitter</a> / <a
+                href="https://www.linkedin.com/company/reality-recycling-center" target="blank">LinkedIn</a></li>
+          </ul>
+        </footer>
+      </div>
+      <div class="right-info">
+        <h3>Services</h3>
+        <ul>
+          <li>3D/AR/VR Design</li>
+          <li>Web Design & Development</li>
+          <li>AI & Machine Learning</li>
+          <li>Minigame Development</li>
+          <li>Art Direction</li>
+          <li>Sound Design</li>
+          <li>Video Installation</li>
+          <li>Analog VFX & Processing</li>
+          <li>Stage Design</li>
+          <li>Mechatronics</li>
+        </ul>
+        <h3>Clients</h3>
+        <ul>
+          <li>Loewe</li>
+          <li>On Running</li>
+          <li>Amazon Music</li>
+          <li>Sylvan Esso</li>
+          <li>Hippo Campus</li>
+          <li>Raffaella</li>
+          <li>Baby Boys</li>
+          <li>Whistler Allen</li>
+          <li>Wye Oak</li>
+        </ul>
+        <h3>Past Clients + Employers</h3>
+        <ul>
+          <li>Red Bull Music</li>
+          <li>Rolling Stone</li>
+          <li>Sonos</li>
+          <li>RocNation</li>
+          <li>Budweiser</li>
+          <li>Universal Music Group</li>
+          <li>Gunpowder & Sky</li>
+        </ul>
+        <h3>Current Team</h3>
+        <ul>
+          <li>Nicholas Byrne</li>
+          <li>Sam Lowe</li>
+          <li>Scott Diekema</li>
+        </ul>
+        <h3>Past + Present Collaborators</h3>
+        <ul>
+          <li>Clare MacDonald</li>
+          <li>Vijay Rajkumar</li>
+          <li>Elinor Walker</li>
+          <li>Nayoun Ryu</li>
+          <li>Florencia</li>
+          <li>Julietta</li>
+        </ul>
+      </div>
+    </div>
+  </section>
+
+  <script src="/Scripts/modal.js"></script>
+  <script src="https://unpkg.com/three@0.113.1/build/three.js"></script>
+  <script src="https://unpkg.com/three@0.113.1/examples/js/controls/OrbitControls.js"></script>
+  <script src="https://unpkg.com/png-js@1.0.0/zlib.js"></script>
+  <script src="https://unpkg.com/png-js@1.0.0/png.js"></script>
+  <script src="/Scripts/index.js"></script>
+</body>
 
 </html>

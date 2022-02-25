@@ -30,66 +30,57 @@ body {
 }
 
 section {
-  padding: 30px;
-  background-size: 60vmax auto;
-  background-position: center;
-  background-repeat: no-repeat;
-  background-attachment: fixed;
   scroll-snap-align: start;
 }
 
-.content {
-  max-width: 960px;
-  max-height: 946px;
-  margin: 0 auto;
+section.about {
+  background-image: url(/Images/cloud-background-texture-small.jpg);
+  background-repeat: no-repeat;
+  background-size: cover;
+  display: flex;
+  align-items: center;
+  justify-content: space-evenly;
+  flex-direction: column;
+  height: 100vh;
 }
 
-section.about h1 {
-  font-size: 2.5vmax;
-  line-height: 1.15;
-  width: 50%;
-}
-
-header img {   
-  max-height: 99px;
+.spin {   
+  max-height: 110px;
   float: left;
   margin-right: 15px;
   padding: 5px;
 }
 
-header {
+.logo {
   font-size: 18px;
   overflow: hidden;
-  margin-bottom: 30px;
 }
 
-.logo {
-  float: left;
-  display: grid; 
-  grid-auto-columns: 1fr; 
-  grid-template-rows: 1fr 1fr 1fr; 
-  gap: 0px 0px; 
+.logo-text {
+  height: 110px;
+  display: flex; 
+  flex-direction: column;
+  align-items: space-between;
   vertical-align: middle;
-  font-size: 28px;
+  font-size: 31px;
   font-family: Neue Haas Bold, sans-serif;
 }
 
-.logo div {
+.logo-text div {
   text-align: left;
-  vertical-align: top;
 }
 
 .menu {
-  float: right;
-  display: grid; 
-  grid-auto-columns: 1fr; 
-  grid-template-rows: 1fr 1fr 1fr; 
-  gap: 5px 0px; 
+  display: flex;
+  width: 720px;
+  flex-direction: row;
+  justify-content: space-between;
 }
 
 .menu div {
   border: 2px solid #000000;
-  padding: 1px 25px 1px 25px;
+  background: white;
+  padding: 5px 25px 5px 25px;
   text-align: center;
   vertical-align: middle;
 }
@@ -97,21 +88,14 @@ header {
 .menu a {
   text-decoration: none;
   color: black;
+  width: 30%;
 }
-
 
 .menu div:hover {
   background: black;
   color: white;
 }
 
-#cloud {
-  position: absolute;
-  top: 50%;
-  left: 50%;
-  transform: translate(-50%, -50%);
-  padding: 0px 40px 0px 40px;
-}
 
 /* The Modal (background) */
 .modal {
@@ -185,7 +169,6 @@ section.about svg {
   position: absolute;
 }
 
-
 #fpsdisplay {
   display: inline-block;
 }
@@ -203,7 +186,7 @@ section.about svg {
 #viewspacecontainer {
   position: relative;
   text-align: left;
-  display: none;
+  display: block;
   margin: 0 auto;
   margin-bottom: 20px;
 }
@@ -213,11 +196,8 @@ section.about svg {
   margin: 0 auto;
   border: 3px solid #000;
   overflow: hidden;
-  width: 960px;
-  height: 720px;
   transform-origin: top left;
 }
-
 
 
 section.infosection {

@@ -64,9 +64,9 @@ const DisplayModeType = {
   /** Disables the view-dependence network. */
   DISPLAY_DIFFUSE: 1,
   /** Only shows the latent features. */
-  DISPLAY_FEATURES: 2 ,
+  DISPLAY_FEATURES: 2,
   /** Only shows the view dependent component. */
-  DISPLAY_VIEW_DEPENDENT: 3 ,
+  DISPLAY_VIEW_DEPENDENT: 3,
   /** Only shows the coarse block grid. */
   DISPLAY_COARSE_GRID: 4,
   /** Only shows the block atlas structure. */
@@ -543,7 +543,7 @@ function createNetworkWeightTexture(network_weights) {
     }
   }
   return createFloatTextureFromData(
-      width, height, weightsData);
+    width, height, weightsData);
 }
 
 /**
@@ -596,22 +596,22 @@ function createViewDependenceFunctions(scene_params) {
   let posEncScales = 4;
 
   let fragmentShaderSource = viewDependenceNetworkShaderFunctions.replace(
-      new RegExp('NUM_CHANNELS_ZERO', 'g'), channelsZero);
+    new RegExp('NUM_CHANNELS_ZERO', 'g'), channelsZero);
   fragmentShaderSource = fragmentShaderSource.replace(
-      new RegExp('NUM_POSENC_SCALES', 'g'), posEncScales.toString());
+    new RegExp('NUM_POSENC_SCALES', 'g'), posEncScales.toString());
   fragmentShaderSource = fragmentShaderSource.replace(
-      new RegExp('NUM_CHANNELS_ONE', 'g'), channelsOne);
+    new RegExp('NUM_CHANNELS_ONE', 'g'), channelsOne);
   fragmentShaderSource = fragmentShaderSource.replace(
-      new RegExp('NUM_CHANNELS_TWO', 'g'), channelsTwo);
+    new RegExp('NUM_CHANNELS_TWO', 'g'), channelsTwo);
   fragmentShaderSource = fragmentShaderSource.replace(
-      new RegExp('NUM_CHANNELS_THREE', 'g'), channelsThree);
+    new RegExp('NUM_CHANNELS_THREE', 'g'), channelsThree);
 
   fragmentShaderSource = fragmentShaderSource.replace(
-      new RegExp('BIAS_LIST_ZERO', 'g'), biasListZero);
+    new RegExp('BIAS_LIST_ZERO', 'g'), biasListZero);
   fragmentShaderSource = fragmentShaderSource.replace(
-      new RegExp('BIAS_LIST_ONE', 'g'), biasListOne);
-    fragmentShaderSource = fragmentShaderSource.replace(
-      new RegExp('BIAS_LIST_TWO', 'g'), biasListTwo);
+    new RegExp('BIAS_LIST_ONE', 'g'), biasListOne);
+  fragmentShaderSource = fragmentShaderSource.replace(
+    new RegExp('BIAS_LIST_TWO', 'g'), biasListTwo);
 
   return fragmentShaderSource;
 }
@@ -643,9 +643,9 @@ function createViewDependenceFunctions(scene_params) {
  * @return {!THREE.Material}
  */
 function createRayMarchMaterial(
-    scene_params, alphaVolumeTexture, rgbVolumeTexture, featureVolumeTexture,
-    atlasIndexTexture, minPosition, gridWidth, gridHeight, gridDepth, blockSize,
-    voxelSize, atlasWidth, atlasHeight, atlasDepth) {
+  scene_params, alphaVolumeTexture, rgbVolumeTexture, featureVolumeTexture,
+  atlasIndexTexture, minPosition, gridWidth, gridHeight, gridDepth, blockSize,
+  voxelSize, atlasWidth, atlasHeight, atlasDepth) {
   let weightsTexZero = null;
   let weightsTexOne = null;
   let weightsTexTwo = null;
@@ -667,9 +667,9 @@ function createRayMarchMaterial(
   let worldspace_R_opengl = new THREE.Matrix3();
   let M_dict = scene_params['worldspace_T_opengl'];
   worldspace_R_opengl['set'](
-      M_dict[0][0], M_dict[0][1], M_dict[0][2],
-      M_dict[1][0], M_dict[1][1], M_dict[1][2],
-      M_dict[2][0], M_dict[2][1], M_dict[2][2]);
+    M_dict[0][0], M_dict[0][1], M_dict[0][2],
+    M_dict[1][0], M_dict[1][1], M_dict[1][2],
+    M_dict[2][0], M_dict[2][1], M_dict[2][2]);
 
   let ndc_f = 755.644059435;
   let ndc_w = 1006.0;
@@ -682,28 +682,28 @@ function createRayMarchMaterial(
 
   const material = new THREE.ShaderMaterial({
     uniforms: {
-      'mapAlpha': {'value': alphaVolumeTexture},
-      'mapColor': {'value': rgbVolumeTexture},
-      'mapFeatures': {'value': featureVolumeTexture},
-      'mapIndex': {'value': atlasIndexTexture},
-      'displayMode': {'value': gDisplayMode - 0},
-      'ndc' : {'value' : 0},
-      'nearPlane' : { 'value' : 0.33},
-      'blockSize': {'value': blockSize},
-      'voxelSize': {'value': voxelSize},
-      'minPosition': {'value': minPosition},
-      'ndc_f': {'value': ndc_f},
-      'ndc_w': {'value': ndc_w},
-      'ndc_h': {'value': ndc_h},
-      'weightsZero': {'value': weightsTexZero},
-      'weightsOne': {'value': weightsTexOne},
-      'weightsTwo': {'value': weightsTexTwo},
-      'world_T_clip': {'value': new THREE.Matrix4()},
-      'worldspace_R_opengl': {'value': worldspace_R_opengl},
+      'mapAlpha': { 'value': alphaVolumeTexture },
+      'mapColor': { 'value': rgbVolumeTexture },
+      'mapFeatures': { 'value': featureVolumeTexture },
+      'mapIndex': { 'value': atlasIndexTexture },
+      'displayMode': { 'value': gDisplayMode - 0 },
+      'ndc': { 'value': 0 },
+      'nearPlane': { 'value': 0.33 },
+      'blockSize': { 'value': blockSize },
+      'voxelSize': { 'value': voxelSize },
+      'minPosition': { 'value': minPosition },
+      'ndc_f': { 'value': ndc_f },
+      'ndc_w': { 'value': ndc_w },
+      'ndc_h': { 'value': ndc_h },
+      'weightsZero': { 'value': weightsTexZero },
+      'weightsOne': { 'value': weightsTexOne },
+      'weightsTwo': { 'value': weightsTexTwo },
+      'world_T_clip': { 'value': new THREE.Matrix4() },
+      'worldspace_R_opengl': { 'value': worldspace_R_opengl },
       'gridSize':
-          {'value': new THREE.Vector3(gridWidth, gridHeight, gridDepth)},
+        { 'value': new THREE.Vector3(gridWidth, gridHeight, gridDepth) },
       'atlasSize':
-          {'value': new THREE.Vector3(atlasWidth, atlasHeight, atlasDepth)}
+        { 'value': new THREE.Vector3(atlasWidth, atlasHeight, atlasDepth) }
     },
     vertexShader: rayMarchVertexShader,
     fragmentShader: fragmentShaderSource,
@@ -770,7 +770,7 @@ function setDims(element, width, height) {
  */
 function addHandlers() {
   const view = document.querySelector('.view');
-  view.addEventListener('keypress', function(e) {
+  view.addEventListener('keypress', function (e) {
     if (e.keyCode === 32 || e.key === ' ' || e.key === 'Spacebar') {
       if (gDisplayMode == DisplayModeType.DISPLAY_NORMAL) {
         gDisplayMode = DisplayModeType.DISPLAY_DIFFUSE;
@@ -806,13 +806,13 @@ function hideLoading() {
 function updateLoadingProgress() {
   let texturergbprogress = document.getElementById('texturergbprogress');
   let texturefeaturesprogress =
-      document.getElementById('texturefeaturesprogress');
+    document.getElementById('texturefeaturesprogress');
 
   const textureString = gNumTextures > 0 ? gNumTextures : '?';
   texturergbprogress.innerHTML =
-      'RGBA images: ' + gLoadedRGBATextures + '/' + textureString;
+    'RGBA images: ' + gLoadedRGBATextures + '/' + textureString;
   texturefeaturesprogress.innerHTML =
-      'feature images: ' + gLoadedFeatureTextures + '/' + textureString;
+    'feature images: ' + gLoadedFeatureTextures + '/' + textureString;
 }
 
 /**
@@ -822,9 +822,9 @@ function updateLoadingProgress() {
  */
 function loadPNG(rgbaUrl) {
   const rgbaPromise = fetch(rgbaUrl, {
-                        method: 'GET',
-                        mode: 'same-origin',
-                      }).then(response => {
+    method: 'GET',
+    mode: 'same-origin',
+  }).then(response => {
     return response.arrayBuffer();
   }).then(buffer => {
     let data = new Uint8Array(buffer);
@@ -834,7 +834,7 @@ function loadPNG(rgbaUrl) {
   });
   rgbaPromise.catch(error => {
     console.error(
-        'Could not PNG image from: ' + rgbaUrl + ', error: ' + error);
+      'Could not PNG image from: ' + rgbaUrl + ', error: ' + error);
     return;
   });
   return rgbaPromise;
@@ -860,8 +860,8 @@ function loadPNG(rgbaUrl) {
  *     uploaded.
  */
 function loadSplitVolumeTexturePNG(
-    texture_alpha, texture_rgb, url, num_slices, volume_width, volume_height,
-    volume_depth, on_update) {
+  texture_alpha, texture_rgb, url, num_slices, volume_width, volume_height,
+  volume_depth, on_update) {
   const slice_depth = 4;
   let uploadPromises = [];
   for (let i = 0; i < num_slices; i++) {
@@ -872,71 +872,71 @@ function loadSplitVolumeTexturePNG(
       return data;
     });
 
-    uploadPromises[i] = new Promise(function(resolve, reject) {
+    uploadPromises[i] = new Promise(function (resolve, reject) {
       Promise.all([rgbaPromise, i])
-          .then(values => {
-            let rgbaPixels = values[0];
-            let i = values[1];
+        .then(values => {
+          let rgbaPixels = values[0];
+          let i = values[1];
 
-            let rgbPixels = new Uint8Array(
-                volume_width * volume_height * slice_depth * 3);
-            let alphaPixels = new Uint8Array(
-                volume_width * volume_height * slice_depth * 1);
+          let rgbPixels = new Uint8Array(
+            volume_width * volume_height * slice_depth * 3);
+          let alphaPixels = new Uint8Array(
+            volume_width * volume_height * slice_depth * 1);
 
-            for (let j = 0; j < volume_width * volume_height * slice_depth;
-                 j++) {
-              rgbPixels[j * 3 + 0] = rgbaPixels[j * 4 + 0];
-              rgbPixels[j * 3 + 1] = rgbaPixels[j * 4 + 1];
-              rgbPixels[j * 3 + 2] = rgbaPixels[j * 4 + 2];
-              alphaPixels[j] = rgbaPixels[j * 4 + 3];
-            }
+          for (let j = 0; j < volume_width * volume_height * slice_depth;
+            j++) {
+            rgbPixels[j * 3 + 0] = rgbaPixels[j * 4 + 0];
+            rgbPixels[j * 3 + 1] = rgbaPixels[j * 4 + 1];
+            rgbPixels[j * 3 + 2] = rgbaPixels[j * 4 + 2];
+            alphaPixels[j] = rgbaPixels[j * 4 + 3];
+          }
 
-            // We unfortunately have to touch THREE.js internals to get access
-            // to the texture handle and gl.texSubImage3D. Using dictionary
-            // notation to make this code robust to minifcation.
-            const rgbTextureProperties =
-                gRenderer['properties'].get(texture_rgb);
-            const alphaTextureProperties =
-                gRenderer['properties'].get(texture_alpha);
-            let gl = gRenderer.getContext();
+          // We unfortunately have to touch THREE.js internals to get access
+          // to the texture handle and gl.texSubImage3D. Using dictionary
+          // notation to make this code robust to minifcation.
+          const rgbTextureProperties =
+            gRenderer['properties'].get(texture_rgb);
+          const alphaTextureProperties =
+            gRenderer['properties'].get(texture_alpha);
+          let gl = gRenderer.getContext();
 
-            let oldTexture = gl.getParameter(gl.TEXTURE_BINDING_3D);
-            gl.bindTexture(
-                gl.TEXTURE_3D, rgbTextureProperties['__webglTexture']);
-            // Upload row-by-row to work around bug with Intel + Mac OSX.
-            // See https://crbug.com/654258.
-            for (let z = 0; z < slice_depth; ++z) {
-              for (let y = 0; y < volume_height; ++y) {
+          let oldTexture = gl.getParameter(gl.TEXTURE_BINDING_3D);
+          gl.bindTexture(
+            gl.TEXTURE_3D, rgbTextureProperties['__webglTexture']);
+          // Upload row-by-row to work around bug with Intel + Mac OSX.
+          // See https://crbug.com/654258.
+          for (let z = 0; z < slice_depth; ++z) {
+            for (let y = 0; y < volume_height; ++y) {
               gl.texSubImage3D(
-                  gl.TEXTURE_3D, 0, 0, y, z + i * slice_depth,
-                  volume_width, 1, 1, gl.RGB, gl.UNSIGNED_BYTE,
-                  rgbPixels, 3 * volume_width * (y + volume_height * z));
-              }
+                gl.TEXTURE_3D, 0, 0, y, z + i * slice_depth,
+                volume_width, 1, 1, gl.RGB, gl.UNSIGNED_BYTE,
+                rgbPixels, 3 * volume_width * (y + volume_height * z));
             }
+          }
 
-            gl.bindTexture(
-                gl.TEXTURE_3D, alphaTextureProperties['__webglTexture']);
-            // Upload row-by-row to work around bug with Intel + Mac OSX.
-            // See https://crbug.com/654258.
-            for (let z = 0; z < slice_depth; ++z) {
-              for (let y = 0; y < volume_height; ++y) {
+          gl.bindTexture(
+            gl.TEXTURE_3D, alphaTextureProperties['__webglTexture']);
+          // Upload row-by-row to work around bug with Intel + Mac OSX.
+          // See https://crbug.com/654258.
+          for (let z = 0; z < slice_depth; ++z) {
+            for (let y = 0; y < volume_height; ++y) {
               gl.texSubImage3D(
-                  gl.TEXTURE_3D, 0, 0, y, z + i * slice_depth,
-                  volume_width, 1, 1, gl.RED, gl.UNSIGNED_BYTE,
-                  alphaPixels, volume_width * (y + volume_height * z));
-              }
+                gl.TEXTURE_3D, 0, 0, y, z + i * slice_depth,
+                volume_width, 1, 1, gl.RED, gl.UNSIGNED_BYTE,
+                alphaPixels, volume_width * (y + volume_height * z));
             }
-            gl.bindTexture(gl.TEXTURE_3D, oldTexture);
+          }
+          gl.bindTexture(gl.TEXTURE_3D, oldTexture);
 
-            resolve(texture_rgb);
-          })
-          .catch(error => {
-            reject(error);
-          });
+          resolve(texture_rgb);
+        })
+        .catch(error => {
+          reject(error);
+        });
     });
   }
 
-  return new Promise(function(resolve, reject) {
+  return new Promise(function (resolve, reject) {
     Promise.all(uploadPromises).then(values => {
       resolve(values[0]);
     });
@@ -960,8 +960,8 @@ function loadSplitVolumeTexturePNG(
  *     uploaded.
  */
 function loadVolumeTexturePNG(
-    texture, url, num_slices, volume_width, volume_height, volume_depth,
-    on_update) {
+  texture, url, num_slices, volume_width, volume_height, volume_depth,
+  on_update) {
   const slice_depth = 4;
   let uploadPromises = [];
   for (let i = 0; i < num_slices; i++) {
@@ -972,42 +972,42 @@ function loadVolumeTexturePNG(
       return data;
     });
 
-    uploadPromises[i] = new Promise(function(resolve, reject) {
+    uploadPromises[i] = new Promise(function (resolve, reject) {
       Promise.all([rgbaPromise, i])
-          .then(values => {
-            let rgbaImage = values[0];
-            let i = values[1];
+        .then(values => {
+          let rgbaImage = values[0];
+          let i = values[1];
 
-            // We unfortunately have to touch THREE.js internals to get access
-            // to the texture handle and gl.texSubImage3D. Using dictionary
-            // notation to make this code robust to minifcation.
-            const textureProperties = gRenderer['properties'].get(texture);
-            let gl = gRenderer.getContext();
+          // We unfortunately have to touch THREE.js internals to get access
+          // to the texture handle and gl.texSubImage3D. Using dictionary
+          // notation to make this code robust to minifcation.
+          const textureProperties = gRenderer['properties'].get(texture);
+          let gl = gRenderer.getContext();
 
-            let oldTexture = gl.getParameter(gl.TEXTURE_BINDING_3D);
-            let textureHandle = textureProperties['__webglTexture'];
-            gl.bindTexture(gl.TEXTURE_3D, textureHandle);
-            // Upload row-by-row to work around bug with Intel + Mac OSX.
-            // See https://crbug.com/654258.
-            for (let z = 0; z < slice_depth; ++z) {
-              for (let y = 0; y < volume_height; ++y) {
+          let oldTexture = gl.getParameter(gl.TEXTURE_BINDING_3D);
+          let textureHandle = textureProperties['__webglTexture'];
+          gl.bindTexture(gl.TEXTURE_3D, textureHandle);
+          // Upload row-by-row to work around bug with Intel + Mac OSX.
+          // See https://crbug.com/654258.
+          for (let z = 0; z < slice_depth; ++z) {
+            for (let y = 0; y < volume_height; ++y) {
               gl.texSubImage3D(
-                  gl.TEXTURE_3D, 0, 0, y, z + i * slice_depth,
-                  volume_width, 1, 1, gl.RGBA, gl.UNSIGNED_BYTE,
-                  rgbaImage, 4 * volume_width * (y + volume_height * z));
-              }
+                gl.TEXTURE_3D, 0, 0, y, z + i * slice_depth,
+                volume_width, 1, 1, gl.RGBA, gl.UNSIGNED_BYTE,
+                rgbaImage, 4 * volume_width * (y + volume_height * z));
             }
-            gl.bindTexture(gl.TEXTURE_3D, oldTexture);
+          }
+          gl.bindTexture(gl.TEXTURE_3D, oldTexture);
 
-            resolve(texture);
-          })
-          .catch(error => {
-            reject(error);
-          });
+          resolve(texture);
+        })
+        .catch(error => {
+          reject(error);
+        });
     });
   }
 
-  return new Promise(function(resolve, reject) {
+  return new Promise(function (resolve, reject) {
     Promise.all(uploadPromises).then(values => {
       resolve(values[0]);
     });
@@ -1028,24 +1028,24 @@ function loadScene(dirUrl, width, height) {
 
   // Loads scene parameters (voxel grid size, NDC/no-NDC, view-dependence MLP).
   let sceneParamsUrl = dirUrl + '/' +
-      'scene_params.json';
+    'scene_params.json';
   let sceneParamsPromise = fetch(sceneParamsUrl, {
-                             method: 'GET',
-                             mode: 'same-origin',
-                           }).then(response => {
+    method: 'GET',
+    mode: 'same-origin',
+  }).then(response => {
     return response.json();
   });
   sceneParamsPromise.catch(error => {
     console.error(
-        'Could not load scene params from: ' + sceneParamsUrl +
-        ', error: ' + error);
+      'Could not load scene params from: ' + sceneParamsUrl +
+      ', error: ' + error);
     return;
   });
 
   // Load the indirection grid.
   const imageLoader = new THREE.ImageLoader();
   let atlasIndexUrl = dirUrl + '/' + 'atlas_indices.png';
-  const atlasIndexPromise = new Promise(function(resolve, reject) {
+  const atlasIndexPromise = new Promise(function (resolve, reject) {
     imageLoader.load(atlasIndexUrl, atlasIndexImage => {
       resolve(atlasIndexImage);
     }, undefined, () => reject(atlasIndexUrl));
@@ -1072,65 +1072,65 @@ function loadScene(dirUrl, width, height) {
 
     // Create empty 3D textures for the loaders to incrementally fill with data.
     let rgbVolumeTexture = new THREE.DataTexture3D(
-        null, gSceneParams['atlas_width'], gSceneParams['atlas_height'],
-        gSceneParams['atlas_depth']);
+      null, gSceneParams['atlas_width'], gSceneParams['atlas_height'],
+      gSceneParams['atlas_depth']);
     rgbVolumeTexture.format = THREE.RGBFormat;
     rgbVolumeTexture.generateMipmaps = false;
     rgbVolumeTexture.magFilter = rgbVolumeTexture.minFilter =
-        THREE.LinearFilter;
+      THREE.LinearFilter;
     rgbVolumeTexture.wrapS = rgbVolumeTexture.wrapT =
-        rgbVolumeTexture.wrapR = THREE.ClampToEdgeWrapping;
+      rgbVolumeTexture.wrapR = THREE.ClampToEdgeWrapping;
     rgbVolumeTexture.type = THREE.UnsignedByteType;
 
     let alphaVolumeTexture = new THREE.DataTexture3D(
-        null, gSceneParams['atlas_width'], gSceneParams['atlas_height'],
-        gSceneParams['atlas_depth']);
+      null, gSceneParams['atlas_width'], gSceneParams['atlas_height'],
+      gSceneParams['atlas_depth']);
     alphaVolumeTexture.format = THREE.RedFormat;
     alphaVolumeTexture.generateMipmaps = true;
     alphaVolumeTexture.magFilter = THREE.LinearFilter;
     alphaVolumeTexture.minFilter = THREE.LinearMipmapNearestFilter;
     alphaVolumeTexture.wrapS = alphaVolumeTexture.wrapT =
-        alphaVolumeTexture.wrapR = THREE.ClampToEdgeWrapping;
+      alphaVolumeTexture.wrapR = THREE.ClampToEdgeWrapping;
     alphaVolumeTexture.type = THREE.UnsignedByteType;
 
     let featureVolumeTexture = null;
     if (!gSceneParams['diffuse']) {
       featureVolumeTexture = new THREE.DataTexture3D(
-          null, gSceneParams['atlas_width'], gSceneParams['atlas_height'],
-          gSceneParams['atlas_depth']);
+        null, gSceneParams['atlas_width'], gSceneParams['atlas_height'],
+        gSceneParams['atlas_depth']);
       featureVolumeTexture.format = THREE.RGBAFormat;
       featureVolumeTexture.generateMipmaps = false;
       featureVolumeTexture.magFilter = featureVolumeTexture.minFilter =
-          THREE.LinearFilter;
+        THREE.LinearFilter;
       featureVolumeTexture.wrapS = featureVolumeTexture.wrapT =
-          featureVolumeTexture.wrapR = THREE.ClampToEdgeWrapping;
+        featureVolumeTexture.wrapR = THREE.ClampToEdgeWrapping;
       featureVolumeTexture.type = THREE.UnsignedByteType;
     }
 
     let atlasIndexTexture = new THREE.DataTexture3D(
-        atlasIndexImage,
-        Math.ceil(gSceneParams['grid_width'] / gSceneParams['block_size']),
-        Math.ceil(gSceneParams['grid_height'] / gSceneParams['block_size']),
-        Math.ceil(gSceneParams['grid_depth'] / gSceneParams['block_size']));
+      atlasIndexImage,
+      Math.ceil(gSceneParams['grid_width'] / gSceneParams['block_size']),
+      Math.ceil(gSceneParams['grid_height'] / gSceneParams['block_size']),
+      Math.ceil(gSceneParams['grid_depth'] / gSceneParams['block_size']));
     atlasIndexTexture.format = THREE.RGBAFormat;
     atlasIndexTexture.generateMipmaps = false;
     atlasIndexTexture.magFilter = atlasIndexTexture.minFilter =
-        THREE.NearestFilter;
+      THREE.NearestFilter;
     atlasIndexTexture.wrapS = atlasIndexTexture.wrapT =
-        atlasIndexTexture.wrapR = THREE.ClampToEdgeWrapping;
+      atlasIndexTexture.wrapR = THREE.ClampToEdgeWrapping;
     atlasIndexTexture.type = THREE.UnsignedByteType;
 
     let fullScreenPlane = new THREE.PlaneBufferGeometry(width, height);
     let rayMarchMaterial = createRayMarchMaterial(
-        gSceneParams, alphaVolumeTexture, rgbVolumeTexture,
-        featureVolumeTexture, atlasIndexTexture,
-        new THREE.Vector3(
-            gSceneParams['min_x'], gSceneParams['min_y'],
-            gSceneParams['min_z']),
-        gSceneParams['grid_width'], gSceneParams['grid_height'],
-        gSceneParams['grid_depth'], gSceneParams['block_size'],
-        gSceneParams['voxel_size'], gSceneParams['atlas_width'],
-        gSceneParams['atlas_height'], gSceneParams['atlas_depth']);
+      gSceneParams, alphaVolumeTexture, rgbVolumeTexture,
+      featureVolumeTexture, atlasIndexTexture,
+      new THREE.Vector3(
+        gSceneParams['min_x'], gSceneParams['min_y'],
+        gSceneParams['min_z']),
+      gSceneParams['grid_width'], gSceneParams['grid_height'],
+      gSceneParams['grid_depth'], gSceneParams['block_size'],
+      gSceneParams['voxel_size'], gSceneParams['atlas_width'],
+      gSceneParams['atlas_height'], gSceneParams['atlas_depth']);
 
     let fullScreenPlaneMesh = new THREE.Mesh(fullScreenPlane, rayMarchMaterial);
     fullScreenPlaneMesh.position.z = -100;
@@ -1141,14 +1141,14 @@ function loadScene(dirUrl, width, height) {
     gRayMarchScene.autoUpdate = false;
 
     gBlitCamera = new THREE.OrthographicCamera(
-        width / -2, width / 2, height / 2, height / -2, -10000, 10000);
+      width / -2, width / 2, height / 2, height / -2, -10000, 10000);
     gBlitCamera.position.z = 100;
   });
 
   initializedPromise.catch(errors => {
     console.error(
-        'Could not load scene from: ' + dirUrl + ', errors:\n\t' + errors[0] +
-        '\n\t' + errors[1] + '\n\t' + errors[2] + '\n\t' + errors[3]);
+      'Could not load scene from: ' + dirUrl + ', errors:\n\t' + errors[0] +
+      '\n\t' + errors[1] + '\n\t' + errors[2] + '\n\t' + errors[3]);
   });
 
   return initializedPromise;
@@ -1160,9 +1160,9 @@ function loadScene(dirUrl, width, height) {
 function initFromParameters() {
   const dirUrl = "/Images/png"
 
-  let width = 960;
-  let height = 500;
-  
+  let width = 720;
+  let height = 540;
+
   gNearPlane = parseFloat(0.33);
   const vfovy = parseFloat(35);
 
@@ -1198,7 +1198,7 @@ function initFromParameters() {
   });
 
   gCamera = new THREE.PerspectiveCamera(
-      72, canvas.offsetWidth / canvas.offsetHeight, gNearPlane, 100.0);
+    72, canvas.offsetWidth / canvas.offsetHeight, gNearPlane, 100.0);
   gCamera.aspect = view.offsetWidth / view.offsetHeight;
   gCamera.fov = vfovy;
   gRenderer.autoClear = false;
@@ -1220,25 +1220,25 @@ function isRendererUnsupported() {
   let gl = document.getElementsByTagName("canvas")[0].getContext('webgl2');
   if (!gl) {
     loading.innerHTML = "Error: WebGL2 context not found. Is your machine" +
-    " equipped with a discrete GPU?";
+      " equipped with a discrete GPU?";
     return true;
   }
 
   let debugInfo = gl.getExtension('WEBGL_debug_renderer_info');
   if (!debugInfo) {
     loading.innerHTML = "Error: Could not fetch renderer info. Is your" +
-    " machine equipped with a discrete GPU?";
+      " machine equipped with a discrete GPU?";
     return true;
   }
 
   let renderer = gl.getParameter(debugInfo.UNMASKED_RENDERER_WEBGL);
   if (!renderer || renderer.search("SwiftShader") >= 0 ||
-      (renderer.search("ANGLE") >= 0 &&
-       renderer.search("Intel") >= 0 &&
-       (renderer.search("HD Graphics") >= 0 ||
+    (renderer.search("ANGLE") >= 0 &&
+      renderer.search("Intel") >= 0 &&
+      (renderer.search("HD Graphics") >= 0 ||
         renderer.search("UHD Graphics") >= 0))) {
-  loading.innerHTML = "Error: Unsupported renderer: " + renderer +
-    ". Are you running with hardware acceleration enabled?";
+    loading.innerHTML = "Error: Unsupported renderer: " + renderer +
+      ". Are you running with hardware acceleration enabled?";
     return true;
   }
 
@@ -1289,16 +1289,16 @@ function loadOnFirstFrame() {
   // Now that the 3D textures have been allocated, we can start slowly filling
   // them with data.
   const alphaVolumeTexture =
-      gRayMarchScene.children[0].material.uniforms['mapAlpha']['value'];
+    gRayMarchScene.children[0].material.uniforms['mapAlpha']['value'];
   const rgbVolumeTexture =
-      gRayMarchScene.children[0].material.uniforms['mapColor']['value'];
+    gRayMarchScene.children[0].material.uniforms['mapColor']['value'];
   let rgbVolumeTexturePromise = loadSplitVolumeTexturePNG(
-      alphaVolumeTexture, rgbVolumeTexture, gSceneParams['dirUrl'] + '/rgba',
-      gNumTextures, gSceneParams['atlas_width'], gSceneParams['atlas_height'],
-      gSceneParams['atlas_depth'], function() {
-        gLoadedRGBATextures++;
-        updateLoadingProgress();
-      });
+    alphaVolumeTexture, rgbVolumeTexture, gSceneParams['dirUrl'] + '/rgba',
+    gNumTextures, gSceneParams['atlas_width'], gSceneParams['atlas_height'],
+    gSceneParams['atlas_depth'], function () {
+      gLoadedRGBATextures++;
+      updateLoadingProgress();
+    });
 
   let featureVolumeTexturePromise = null;
   if (!gSceneParams['diffuse']) {
@@ -1307,26 +1307,26 @@ function loadOnFirstFrame() {
     featureVolumeTexturePromise = loadVolumeTexturePNG(
       featureVolumeTexture, gSceneParams['dirUrl'] + '/feature', gNumTextures,
       gSceneParams['atlas_width'], gSceneParams['atlas_height'],
-      gSceneParams['atlas_depth'], function() {
+      gSceneParams['atlas_depth'], function () {
         gLoadedFeatureTextures++;
         updateLoadingProgress();
       });
   }
 
   let allTexturesPromise =
-      Promise.all([rgbVolumeTexturePromise, featureVolumeTexturePromise]);
+    Promise.all([rgbVolumeTexturePromise, featureVolumeTexturePromise]);
   allTexturesPromise.catch(errors => {
     console.error(
-        'Could not load scene from: ' + gSceneParams['dirUrl'] +
-        ', errors:\n\t' + errors[0] + '\n\t' + errors[1] + '\n\t' + errors[2] +
-        '\n\t' + errors[3]);
+      'Could not load scene from: ' + gSceneParams['dirUrl'] +
+      ', errors:\n\t' + errors[0] + '\n\t' + errors[1] + '\n\t' + errors[2] +
+      '\n\t' + errors[3]);
   });
 
   // After all the textures have been loaded, we build mip maps for alpha
   // to enable accelerated ray marching inside each macroblock.
   allTexturesPromise.then(texture => {
     const alphaTextureProperties =
-        gRenderer['properties'].get(alphaVolumeTexture);
+      gRenderer['properties'].get(alphaVolumeTexture);
     let gl = gRenderer.getContext();
     let oldTexture = gl.getParameter(gl.TEXTURE_BINDING_3D);
     gl.bindTexture(gl.TEXTURE_3D, alphaTextureProperties['__webglTexture']);
@@ -1348,7 +1348,7 @@ function updateFPSCounter() {
   let currentFrame = window.performance.now();
   let milliseconds = currentFrame - gLastFrame;
   let oldMilliseconds = 1000 /
-      (parseFloat(document.getElementById('fpsdisplay').innerHTML) || 1.0);
+    (parseFloat(document.getElementById('fpsdisplay').innerHTML) || 1.0);
 
   // Prevent the FPS from getting stuck by ignoring frame times over 2 seconds.
   if (oldMilliseconds > 2000 || oldMilliseconds < 0) {
@@ -1379,25 +1379,24 @@ function render(t) {
   world_T_clip.multiplyMatrices(world_T_camera, camera_T_clip);
 
   gRayMarchScene.children[0].material.uniforms['world_T_clip']['value'] =
-      world_T_clip;
+    world_T_clip;
   gRayMarchScene.children[0].material.uniforms['displayMode']['value'] =
-      gDisplayMode - 0;
+    gDisplayMode - 0;
   gRayMarchScene.children[0].material.uniforms['ndc']['value'] =
-      gSceneParams['ndc'] - 0;
+    gSceneParams['ndc'] - 0;
   gRayMarchScene.children[0].material.uniforms['nearPlane']['value'] =
-      gNearPlane;
+    gNearPlane;
   gRenderer.render(gRayMarchScene, gBlitCamera);
 
   updateFPSCounter();
   if (firstFrame || isRendering) {
     firstFrame = false;
     animationFrame = requestAnimationFrame(render);
-  } else if (animationFrame != null)
-  {
+  } else if (animationFrame != null) {
     cancelAnimationFrame(animationFrame);
     animationFrame = null;
   }
-  
+
 }
 
 function startRender() {
