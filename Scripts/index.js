@@ -1161,7 +1161,7 @@ function initFromParameters() {
   const dirUrl = "/Images/png"
 
   let width = 720;
-  let height = 540;
+  let height = 480;
 
   gNearPlane = parseFloat(0.33);
   const vfovy = parseFloat(35);
@@ -1228,6 +1228,11 @@ function isRendererUnsupported() {
   if (!debugInfo) {
     loading.innerHTML = "Error: Could not fetch renderer info. Is your" +
       " machine equipped with a discrete GPU?";
+    return true;
+  }
+
+  let width = window.innerWidth || document.documentElement.clientWidth || document.body.clientWidth;
+  if (width < 740) {
     return true;
   }
 

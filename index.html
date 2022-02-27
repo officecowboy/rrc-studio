@@ -83,7 +83,7 @@
             </p>
             <p id="last">
               Note: we recommend viewing in Brave, Firefox or Chrome. If you see a black box on Safari, you may need to
-              update your computer in order to view the cloud.
+              update your OS in order to view the cloud.
             </p>
             <div class="controls">
               <div>Controls:</div>
@@ -96,6 +96,9 @@
       </div>
     </div>
 
+    <div class="cloud-mobile">
+      <img src="/Images/StormCloud.gif">
+    </div>
     <div class="menu" !important>
       <a href="#infosection">
         <div !important>Info</div>
@@ -111,36 +114,43 @@
   </section>
 
   <section class="infosection" id="infosection">
-    <div class="content-info">
+    <div class="info-container">
       <div class="left-info">
-        <h2>The Reality Recycling Center (RRC) creates mixed reality experiences, tools, and souvenirs that spark new
-          connections across media and technology of the past, present, and future.</h2>
-        <p>Beginning as a series of independent experiments, RRC has evolved into a multi-disciplinary creative studio
-          with clients and collaborators in art, music, and technology.
-          <br><br>
-          Our team is currently pursuing graduate study in lighting design at Parsons School of Design and artificial
-          intelligence at Stanford University. We bring a combined background and interest in computer science,
-          audio/video production, and media studies to our work at RRC.
-        </p>
-        <footer>
+        <div class="left-info-bio">
+          <h2>
+            The Reality Recycling Center (RRC) creates mixed reality experiences, tools, and souvenirs that spark new
+            connections across media and technology of the past, present, and future.
+          </h2>
+          <p>
+            Born out of a series of audiovisual experiments, RRC has evolved into a multi-disciplinary creative
+            studio
+            with clients and collaborators in art, music, and technology.
+          </p>
+          <p>
+            Our team is currently pursuing graduate study in lighting design at Parsons School of Design and artificial
+            intelligence at Stanford University. We bring a combined background and interest in computer science,
+            audio/video production, and media studies to our work at RRC.
+          </p>
+        </div>
+        <footer class="label">
           <img src="Images/RRClogo_7.12.21_small.png">
-          <ul>
+          <ul class="label-text">
             <li>REALITY RECYCLING CENTER, LLC</li>
             <li>347-956-8885</li>
             <li><a href="mailto:hello@realityrecycling.center">hello@realityrecycling.center</a></li>
-            <li><a href="https://www.instagram.com/recyclereality/" target="blank">Instagram</a> / <a
-                href="https://twitter.com/recyclereality" target="blank">Twitter</a> / <a
-                href="https://www.linkedin.com/company/reality-recycling-center" target="blank">LinkedIn</a></li>
+            <li><a href="https://www.instagram.com/recyclereality/" target="blank">Instagram</a> /
+              <a href="https://twitter.com/recyclereality" target="blank">Twitter</a> /
+              <a href="https://www.linkedin.com/company/reality-recycling-center" target="blank">LinkedIn</a>
+            </li>
           </ul>
         </footer>
       </div>
-      <div class="right-info">
+      <div class="info-column-2">
         <h3>Services</h3>
         <ul>
           <li>3D/AR/VR Design</li>
           <li>Web Design & Development</li>
           <li>AI & Machine Learning</li>
-          <li>Minigame Development</li>
           <li>Art Direction</li>
           <li>Sound Design</li>
           <li>Video Installation</li>
@@ -158,21 +168,20 @@
           <li>Whistler Allen</li>
           <li>Wye Oak</li>
         </ul>
-        <h3>Past Clients + Employers</h3>
-        <ul>
-          <li>Red Bull Music</li>
-          <li>Rolling Stone</li>
-          <li>Sonos</li>
-          <li>RocNation</li>
-          <li>Budweiser</li>
-          <li>Universal Music Group</li>
-          <li>Gunpowder & Sky</li>
-        </ul>
         <h3>Current Team</h3>
         <ul>
           <li>Nicholas Byrne</li>
           <li>Sam Lowe</li>
           <li>Scott Diekema</li>
+        </ul>
+        <h3>Past Clients + Employers</h3>
+        <ul>
+          <li>Sonos</li>
+          <li>Red Bull Music</li>
+          <li>Universal Music Group</li>
+          <li>Rolling Stone</li>
+          <li>RocNation</li>
+          <li>Gunpowder & Sky</li>
         </ul>
         <h3>Past + Present Collaborators</h3>
         <ul>
@@ -180,19 +189,32 @@
           <li>Vijay Rajkumar</li>
           <li>Elinor Walker</li>
           <li>Nayoun Ryu</li>
-          <li>Florencia</li>
-          <li>Julietta</li>
+          <li>Florencia Lechin</li>
+          <li>Julietta Herqui</li>
         </ul>
+        <footer class="label-mobile">
+          <img src="Images/RRClogo_7.12.21_small.png">
+          <ul class="label-text" id="label-text-mobile">
+            <li>REALITY RECYCLING CENTER, LLC</li>
+            <li>347-956-8885</li>
+            <li><a href="mailto:hello@realityrecycling.center">hello@realityrecycling.center</a></li>
+            <li><a href="https://www.instagram.com/recyclereality/" target="blank">Instagram</a> /
+              <a href="https://twitter.com/recyclereality" target="blank">Twitter</a> /
+              <a href="https://www.linkedin.com/company/reality-recycling-center" target="blank">LinkedIn</a>
+            </li>
+          </ul>
+        </footer>
       </div>
     </div>
+    </div>
   </section>
-
   <script src="/Scripts/modal.js"></script>
   <script src="https://unpkg.com/three@0.113.1/build/three.js"></script>
   <script src="https://unpkg.com/three@0.113.1/examples/js/controls/OrbitControls.js"></script>
   <script src="https://unpkg.com/png-js@1.0.0/zlib.js"></script>
   <script src="https://unpkg.com/png-js@1.0.0/png.js"></script>
   <script src="/Scripts/index.js"></script>
+  </script>
 </body>
 
 </html>
