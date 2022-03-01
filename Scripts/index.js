@@ -1231,11 +1231,6 @@ function isRendererUnsupported() {
     return true;
   }
 
-  let width = window.innerWidth || document.documentElement.clientWidth || document.body.clientWidth;
-  if (width < 740) {
-    return true;
-  }
-
   return false;
 }
 
