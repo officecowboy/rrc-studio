@@ -335,16 +335,19 @@ animation-timing-function: linear;
 
 @media (max-width: 816px) {
   section.infosection {
-    padding: 50px 25px;
+    padding: 50px 20px;
   }
 }
 
 @media (max-width: 740px) {
 
   section.about {
+    display: flex;
     align-items: center;
     justify-content: space-between;
     flex-direction: column;
+    background-image: none;
+    background-color: white;
   }
 
   .logo {
@@ -374,9 +377,23 @@ animation-timing-function: linear;
     font-size: 24px;
   }
   
+  .menu div:hover {
+    background: white;
+    color: black;
+  }
+
+  .menu div:active {
+    background: black;
+    color: white;
+  }
 
   .cloud {
     display: none;
+  }
+
+  .cloud-mobile {
+    display: initial;
+    max-width: 100%;
   }
 
   .info-container {
