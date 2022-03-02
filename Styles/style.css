@@ -306,8 +306,12 @@ section.infosection a:hover {
   display: none;
 }
 
-.logo-mobile {
-  display: none
+.cloud-mobile {
+  display: none;
+}
+
+.disclaimer {
+  display: none;
 }
 
 @keyframes spinning {
@@ -335,7 +339,7 @@ animation-timing-function: linear;
 
 @media (max-width: 816px) {
   section.infosection {
-    padding: 50px 20px;
+    padding: 40px 20px;
   }
 }
 
@@ -347,14 +351,21 @@ animation-timing-function: linear;
     justify-content: space-between;
     flex-direction: column;
     background-image: url("/Images/cloud-background-texture-small.jpg");
-    background-position: center;
     height: auto;
   }
 
   .logo {
     margin: 30px 0px;
   }
-  
+
+  .spin {
+    animation-name: spinning;
+    animation-duration: 30s;
+    animation-iteration-count: infinite;
+    /* linear | ease | ease-in | ease-out | ease-in-out */
+    animation-timing-function: linear;
+    }
+
   .menu {
     display: flex;
     flex-direction: row;
@@ -420,15 +431,19 @@ animation-timing-function: linear;
 
   h2 {
     font-size: 20px;
-    margin-bottom: 50px;
+    margin-bottom: 40px;
   }
 
   .left-info-bio p:last-child {
-    margin-bottom: 50px;
+    margin-bottom: 40px;
   }
 
   .info-column-2 {
     width: 100%;
+  }
+
+  .disclaimer {
+    display: initial;
   }
 
   .label-mobile {
