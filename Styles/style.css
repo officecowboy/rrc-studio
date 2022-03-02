@@ -379,7 +379,7 @@ animation-timing-function: linear;
     border-top: 2px solid #000000;
     background: white;
     width: 100%;
-    padding: 10px 20px 12px 25px;
+    padding: 5px 0px;
     text-align: center;
     vertical-align: middle;
   }
@@ -394,7 +394,7 @@ animation-timing-function: linear;
 
   .menu a {
     width: 100%;
-    font-size: 24px;
+    font-size: 20px;
   }
   
   .menu div:hover {
