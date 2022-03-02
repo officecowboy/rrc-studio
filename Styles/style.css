@@ -289,7 +289,8 @@ section.infosection p {
 }
 
 .info-column-2 ul {
-  margin-bottom: 20px;
+  margin-bottom: 30px;
+  line-height: 1.5;
 }
 
 .info-column-2 a {
@@ -316,7 +317,7 @@ section.infosection a {
 }
 
 .more-info a {
-  text-decoration: none;
+  text-decoration: underline;
 }
 
 .more-info a:hover {
