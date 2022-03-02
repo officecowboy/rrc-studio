@@ -317,7 +317,7 @@ section.infosection a {
 }
 
 .more-info a {
-  text-decoration: underline;
+  text-decoration: none;
 }
 
 .more-info a:hover {
