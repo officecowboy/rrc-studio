@@ -289,8 +289,7 @@ section.infosection p {
 }
 
 .info-column-2 ul {
-  margin-bottom: 30px;
-  line-height: 1.5;
+  margin-bottom: 20px;
 }
 
 .info-column-2 a {
@@ -464,6 +463,11 @@ animation-timing-function: linear;
     width: 100%;
     max-width: none;
     font-size: 18px;
+  }
+
+  .info-column-2 ul {
+    margin-bottom: 30px;
+    line-height: 1.5;
   }
 
   .disclaimer {
