@@ -35,6 +35,7 @@
   <script src="https://unpkg.com/three@0.113.1/build/three.js"></script>
   <script src="https://unpkg.com/three@0.113.1/examples/js/controls/OrbitControls.js"></script>
   <script src="https://unpkg.com/png-js@1.0.0/zlib.js"></script>
+  <script src="/Scripts/toggle.js"></script>
   <script src="https://unpkg.com/png-js@1.0.0/png.js"></script>
   <script>
     var width = window.innerWidth
@@ -199,11 +200,36 @@
         <ul>
           <li>Amazon Music</li>
           <li>On Running</li>
-          <li>Sylvan Esso</li>
-          <li>Hippo Campus</li>
-          <li>Baby Boys</li>
-          <li>Whistler Allen</li>
-          <li>Wye Oak</li>
+          <li><a id="SE">Sylvan Esso</a></li>
+          <li style="display: none;" class="more-info" id="SylvanEsso">
+            <p><a href="https://www.sylvanesso.com/" target="blank">Web Design & Development &#x2197;</a></p>
+            <p><a href="https://www.sylvanesso.com/" target="blank">Ticket Page Development &#x2197;</a></p>
+            <p>"Shaking Out the Numb Tour" Poster & Social Assets (Art Direction)</p>
+            <p>"Shaking Out the Numb Tour" Promotional Video (Editing & Analog VFX)</p>
+          </li>
+          <li><a id="HC">Hippo Campus</a></li>
+          <li style="display: none;" class="more-info" id="HippoCampus">
+            <a href="https://www.youtube.com/watch?v=KuvN39H2dRw" target="blank">"Bad Dream Baby" Music Video (Editing &
+              Analog VFX) &#x2197;</a>
+          </li>
+          <li><a id="BB">Baby Boys</a></li>
+          <li style="display: none;" class="more-info" id="BabyBoys">
+            <p><a href="https://www.babyboys.sucks/" target="blank">Web Design & Development &#x2197;</a></p>
+            <p>3D/AR Design & Development</p>
+            <p><a href="https://www.youtube.com/watch?v=POtBtd0dClQ/" target="blank">"Live at The Mall of America"
+                Concert
+                Film (Direction & Editing) &#x2197;</a></p>
+            <p>Spotify Visual Loops</p>
+          </li>
+          <li><a id="WA">Whistler Allen</a></li>
+          <li style="display: none;" class="more-info" id="WhistlerAllen">
+            <a href="https://www.youtube.com/watch?v=9dMp-ZE4f_k" target="blank">"Baseball Cap" Music Video (Editing &
+              Analog VFX) &#x2197;</a>
+          </li>
+          <li><a id="WO">Wye Oak</a></li>
+          <li style="display: none;" class="more-info" id="WyeOak">
+            Concert Poster & Merch Design
+          </li>
         </ul>
         <h3>Past Clients + Employers</h3>
         <ul>
@@ -223,7 +249,7 @@
           <li>Florencia Lechin</li>
           <li>Julietta Herqui</li>
         </ul>
-        <p class="disclaimer">
+        <p class=" disclaimer">
           Note: please visit the desktop version of this website to interact with our latest research.
         </p>
         <footer class="label-mobile">
@@ -243,6 +269,23 @@
     </div>
   </section>
   <script src="/Scripts/modal.js"></script>
+  <script>
+    document.getElementById("SE").addEventListener('click', function () {
+      slideToggle(document.getElementById("SylvanEsso"), 200);
+    });
+    document.getElementById("HC").addEventListener('click', function () {
+      slideToggle(document.getElementById("HippoCampus"), 200);
+    });
+    document.getElementById("BB").addEventListener('click', function () {
+      slideToggle(document.getElementById("BabyBoys"), 200);
+    });
+    document.getElementById("WA").addEventListener('click', function () {
+      slideToggle(document.getElementById("WhistlerAllen"), 200);
+    });
+    document.getElementById("WO").addEventListener('click', function () {
+      slideToggle(document.getElementById("WyeOak"), 200);
+    });
+  </script>
 </body>
 
 </html>

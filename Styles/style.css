@@ -244,9 +244,12 @@ h2 {
 }
 
 section.infosection p {
-  margin-bottom: 20px;
   font-size: 16px;
   font-family: Neue Haas Regular, sans-serif;
+}
+
+.left-info p {
+  margin-bottom: 20px;
 }
 
 .left-info {
@@ -282,23 +285,41 @@ section.infosection p {
   font-family: Neue Haas Regular, sans-serif;
   min-width: 215px;
   overflow-y: scroll;
+  max-width: 287.17px;
 }
 
 .info-column-2 ul {
   margin-bottom: 20px;
 }
 
-section.infosection h3 {
+.info-column-2 a {
   text-decoration: underline;
+}
+
+section.infosection h3 {
+  font-family: Neue Haas Medium, sans-serif;
   margin-bottom: 10px;
+  text-transform: uppercase;
 }
 
 section.infosection a {
-  text-decoration: none;
+  cursor: pointer;
   color: white;
 }
 
-section.infosection a:hover {
+.more-info {
+  padding: 10px 0px;
+}
+
+.more-info p {
+  margin-bottom: 10px;
+}
+
+.more-info a {
+  text-decoration: none;
+}
+
+.more-info a:hover {
   text-decoration: underline;
 }
 
@@ -442,12 +463,16 @@ animation-timing-function: linear;
     width: 100%;
   }
 
+  .info-column-2 li {
+    line-height: 1.5;
+  }
+
   .disclaimer {
     display: initial;
   }
 
   .label-mobile {
-    padding-top: 30px;
+    padding-top: 20px;
     display: flex;
     width: 100%;
     flex-direction: row;
