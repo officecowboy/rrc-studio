@@ -268,7 +268,6 @@ section.infosection p {
 .label {
   display: flex;
   flex-direction: row;
-  margin-bottom: 20px;
 }
 
 .label-text {
@@ -278,6 +277,10 @@ section.infosection p {
   display: flex;
   flex-direction: column;
   justify-content: space-evenly;
+}
+
+.label-text a {
+  color: white;
 }
 
 .info-column-2 {
@@ -304,8 +307,8 @@ section.infosection h3 {
 
 section.infosection a {
   cursor: pointer;
-  color: white;
 }
+
 
 .more-info {
   padding: 10px 0px;
@@ -313,10 +316,12 @@ section.infosection a {
 
 .more-info p {
   margin-bottom: 10px;
+  color: #b1b1b1;
 }
 
 .more-info a {
   text-decoration: none;
+  color: #b1b1b1;
 }
 
 .more-info a:hover {
@@ -455,7 +460,7 @@ animation-timing-function: linear;
     margin-bottom: 40px;
   }
 
-  section.info p {
+  section.infosection p {
     font-size: 18px;
   }
 
@@ -495,9 +500,17 @@ animation-timing-function: linear;
     margin-left: 10px;
   }
 
+  .label-text a {
+    color: white;
+  }
+
 #label-text-mobile {
     margin-bottom: 0px;
     font-size: 14px;
+  }
+
+  .more-info a {
+    text-decoration: underline;
   }
 
 }
