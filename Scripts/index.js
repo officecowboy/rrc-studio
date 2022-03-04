@@ -1404,4 +1404,8 @@ function start() {
   addHandlers();
 }
 
-start();
+window.addEventListener('load', function () {
+
+  start();
+
+})
