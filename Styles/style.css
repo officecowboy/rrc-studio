@@ -261,8 +261,10 @@ section.infosection p {
   justify-content: space-between;
 }
 
-.label img {
+img.label-image {
   max-width: 100px;
+  align-self: center;
+  justify-self: center;
 }
 
 .label {

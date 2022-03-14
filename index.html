@@ -35,7 +35,6 @@
   <script src="https://unpkg.com/three@0.113.1/build/three.js"></script>
   <script src="https://unpkg.com/three@0.113.1/examples/js/controls/OrbitControls.js"></script>
   <script src="https://unpkg.com/png-js@1.0.0/zlib.js"></script>
-  <script src="/Scripts/toggle.js"></script>
   <script src="https://unpkg.com/png-js@1.0.0/png.js"></script>
 </head>
 
@@ -156,7 +155,7 @@
           </p>
         </div>
         <footer class="label">
-          <img src="Images/RRClogo_7.12.21_small.png">
+          <img class="label-image" src="Images/RRClogo_7.12.21_small.png">
           <ul class="label-text">
             <li>REALITY RECYCLING CENTER, LLC</li>
             <li>347-956-8885</li>
@@ -247,7 +246,7 @@
           Note: please visit the desktop version of this website to interact with our latest research.
         </p>
         <footer class="label-mobile">
-          <img src="Images/RRClogo_7.12.21_small.png">
+          <img class="label-image" src="Images/RRClogo_7.12.21_small.png">
           <ul class="label-text" id="label-text-mobile">
             <li>REALITY RECYCLING CENTER, LLC</li>
             <li>347-956-8885</li>
@@ -272,23 +271,7 @@
       document.write('<script src="/Scripts/index.js"><\/script>');
     }
   </script>
-  <script>
-    document.getElementById("SE").addEventListener('click', function () {
-      slideToggle(document.getElementById("SylvanEsso"), 200);
-    });
-    document.getElementById("HC").addEventListener('click', function () {
-      slideToggle(document.getElementById("HippoCampus"), 200);
-    });
-    document.getElementById("BB").addEventListener('click', function () {
-      slideToggle(document.getElementById("BabyBoys"), 200);
-    });
-    document.getElementById("WA").addEventListener('click', function () {
-      slideToggle(document.getElementById("WhistlerAllen"), 200);
-    });
-    document.getElementById("WO").addEventListener('click', function () {
-      slideToggle(document.getElementById("WyeOak"), 200);
-    });
-  </script>
+  <script src="/Scripts/toggle.js"></script>
 </body>
 
 </html>

@@ -62,3 +62,19 @@ var slideToggle = (target, duration = 500) => {
     return slideUp(target, duration);
   }
 }
+
+document.getElementById("SE").addEventListener('click', function () {
+  slideToggle(document.getElementById("SylvanEsso"), 200);
+});
+document.getElementById("HC").addEventListener('click', function () {
+  slideToggle(document.getElementById("HippoCampus"), 200);
+});
+document.getElementById("BB").addEventListener('click', function () {
+  slideToggle(document.getElementById("BabyBoys"), 200);
+});
+document.getElementById("WA").addEventListener('click', function () {
+  slideToggle(document.getElementById("WhistlerAllen"), 200);
+});
+document.getElementById("WO").addEventListener('click', function () {
+  slideToggle(document.getElementById("WyeOak"), 200);
+});
