@@ -1,17 +1,17 @@
 
 @font-face {
   font-family: Neue Haas Medium;
-  src: url(/Fonts/nhaasgrotesktxpro-65md.ttf);
+  src: url(Fonts/nhaasgrotesktxpro-65md.ttf);
 }
 
 @font-face {
   font-family: Neue Haas Regular;
-  src: url(/Fonts/nhaasgrotesktxpro-55rg.ttf);
+  src: url(Fonts/nhaasgrotesktxpro-55rg.ttf);
 }
 
 @font-face {
   font-family: Neue Haas Bold;
-  src: url(/Fonts/nhaasgrotesktxpro-75bd.ttf);
+  src: url(Fonts/nhaasgrotesktxpro-75bd.ttf);
 }
 
 html, body {
@@ -32,7 +32,7 @@ section {
 }
 
 section.about {
-  background-image: url("/Images/cloud-background-texture-gradient.jpg");
+  background-image: url("Images/cloud-background-texture-gradient.jpg");
   background-repeat: no-repeat;
   background-size: cover;
   display: flex;
@@ -378,7 +378,7 @@ animation-timing-function: linear;
     align-items: center;
     justify-content: space-between;
     flex-direction: column;
-    background-image: url("/Images/cloud-background-texture-small.jpg");
+    background-image: url("Images/cloud-background-texture-small.jpg");
     height: auto;
   }
 
