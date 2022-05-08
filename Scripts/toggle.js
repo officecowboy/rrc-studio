@@ -63,6 +63,15 @@ var slideToggle = (target, duration = 500) => {
   }
 }
 
+document.getElementById("AM").addEventListener('click', function () {
+  slideToggle(document.getElementById("Amazon"), 200);
+});
+document.getElementById("ON").addEventListener('click', function () {
+  slideToggle(document.getElementById("OnRunning"), 200);
+});
+document.getElementById("RF").addEventListener('click', function () {
+  slideToggle(document.getElementById("Raffaella"), 200);
+});
 document.getElementById("SE").addEventListener('click', function () {
   slideToggle(document.getElementById("SylvanEsso"), 200);
 });
