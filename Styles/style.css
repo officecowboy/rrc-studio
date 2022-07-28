@@ -358,6 +358,10 @@ section.infosection a {
   display: none;
 }
 
+.italic {
+  font-style: italic;
+}
+
 @keyframes spinning {
   from {
     transform: rotate(0deg);
